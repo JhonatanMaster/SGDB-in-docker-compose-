@@ -18,12 +18,12 @@
     --green-dim: #0a3d1f;
     --yellow: #eab308;
     --yellow-dim: #3d3008;
+    --orange: #f97316;
+    --orange-dim: #3d1f08;
     --code-bg: #12141c;
     --step-line: #2a2e3a;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     font-family: 'Inter', sans-serif;
     background: var(--bg);
@@ -33,203 +33,64 @@
     max-width: 780px;
     margin: 0 auto;
   }
-
-  header {
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border);
-  }
-
+  header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
   header .tag {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--accent);
-    background: var(--accent-dim);
-    padding: 0.25rem 0.7rem;
-    border-radius: 4px;
-    margin-bottom: 1rem;
+    display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    color: var(--accent); background: var(--accent-dim); padding: 0.25rem 0.7rem; border-radius: 4px; margin-bottom: 1rem;
   }
-
-  header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-  }
-
+  header h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
   header h1 span { color: var(--accent); }
-
-  header p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    max-width: 560px;
-  }
-
-  /* Steps */
-  .step {
-    position: relative;
-    padding-left: 2.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .step::before {
-    content: '';
-    position: absolute;
-    left: 11px;
-    top: 32px;
-    bottom: -2.5rem;
-    width: 2px;
-    background: var(--step-line);
-  }
-
+  header p { color: var(--text-muted); font-size: 0.95rem; max-width: 560px; }
+  .step { position: relative; padding-left: 2.5rem; margin-bottom: 2.5rem; }
+  .step::before { content: ''; position: absolute; left: 11px; top: 32px; bottom: -2.5rem; width: 2px; background: var(--step-line); }
   .step:last-child::before { display: none; }
-
   .step-number {
-    position: absolute;
-    left: 0;
-    top: 2px;
-    width: 24px;
-    height: 24px;
-    background: var(--accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #fff;
+    position: absolute; left: 0; top: 2px; width: 24px; height: 24px; background: var(--accent);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700; color: #fff;
   }
-
-  .step h2 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 0.6rem;
-  }
-
-  .step p, .step ul {
-    font-size: 0.92rem;
-    color: var(--text-muted);
-    margin-bottom: 0.8rem;
-  }
-
+  .step h2 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.6rem; }
+  .step p, .step ul { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0.8rem; }
   .step ul { padding-left: 1.2rem; }
   .step ul li { margin-bottom: 0.3rem; }
-
-  /* Code blocks */
-  .code-block {
-    background: var(--code-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 0.8rem 0;
-  }
-
+  .code-block { background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 0.8rem 0; }
   .code-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--text-muted);
+    display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1rem;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-muted);
   }
-
   .code-header button {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s;
+    background: none; border: 1px solid var(--border); color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; padding: 0.2rem 0.6rem;
+    border-radius: 4px; cursor: pointer; transition: all 0.2s;
   }
-  .code-header button:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  pre {
-    padding: 1rem 1.2rem;
-    overflow-x: auto;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.82rem;
-    line-height: 1.8;
-  }
-
-  .cm { color: #6a737d; }          /* comment */
-  .kw { color: #c678dd; }          /* keyword */
-  .st { color: #98c379; }          /* string */
-  .nb { color: #e5c07b; }          /* number/bool */
-  .key { color: #61afef; }         /* yaml key */
-  .flag { color: #e06c75; }        /* flags */
-  .cmd { color: #56b6c2; }         /* command */
-
-  /* Info boxes */
-  .info {
-    padding: 0.9rem 1rem;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    margin: 0.8rem 0;
-    border-left: 3px solid;
-  }
-
-  .info.tip {
-    background: var(--green-dim);
-    border-color: var(--green);
-    color: #a7f3d0;
-  }
-
-  .info.warn {
-    background: var(--yellow-dim);
-    border-color: var(--yellow);
-    color: #fef08a;
-  }
-
+  .code-header button:hover { border-color: var(--accent); color: var(--accent); }
+  pre { padding: 1rem 1.2rem; overflow-x: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; line-height: 1.8; }
+  .cm { color: #6a737d; } .kw { color: #c678dd; } .st { color: #98c379; }
+  .nb { color: #e5c07b; } .key { color: #61afef; } .flag { color: #e06c75; } .cmd { color: #56b6c2; }
+  .info { padding: 0.9rem 1rem; border-radius: 8px; font-size: 0.85rem; margin: 0.8rem 0; border-left: 3px solid; }
+  .info.tip { background: var(--green-dim); border-color: var(--green); color: #a7f3d0; }
+  .info.warn { background: var(--yellow-dim); border-color: var(--yellow); color: #fef08a; }
+  .info.note { background: var(--orange-dim); border-color: var(--orange); color: #fed7aa; }
   .info strong { display: block; margin-bottom: 0.2rem; }
-
-  /* Table */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.85rem;
-    margin: 0.8rem 0;
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0.8rem 0; }
+  th, td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border); }
+  th { color: var(--text-muted); font-weight: 500; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  td code, code {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
+    background: var(--surface); padding: 0.15rem 0.4rem; border-radius: 3px;
   }
-
-  th, td {
-    text-align: left;
-    padding: 0.6rem 0.8rem;
-    border-bottom: 1px solid var(--border);
+  .os-tabs { display: flex; gap: 0; margin-top: 0.8rem; }
+  .os-tab {
+    padding: 0.4rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text-muted);
+    cursor: pointer; transition: all 0.2s; border-bottom: none;
   }
-
-  th {
-    color: var(--text-muted);
-    font-weight: 500;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  td code {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    background: var(--surface);
-    padding: 0.15rem 0.4rem;
-    border-radius: 3px;
-  }
-
-  code {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.82rem;
-    background: var(--surface);
-    padding: 0.1rem 0.35rem;
-    border-radius: 3px;
-  }
-
+  .os-tab:first-child { border-radius: 6px 0 0 0; }
+  .os-tab:last-child { border-radius: 0 6px 0 0; }
+  .os-tab.active { background: var(--code-bg); color: var(--accent); border-bottom-color: var(--code-bg); }
+  .os-content { display: none; }
+  .os-content.active { display: block; }
   @media (max-width: 600px) {
     body { padding: 1.2rem 1rem 3rem; }
     header h1 { font-size: 1.5rem; }
@@ -242,19 +103,17 @@
 <header>
   <div class="tag">tutorial passo a passo</div>
   <h1>Docker Compose + <span>PostgreSQL</span></h1>
-  <p>Suba um banco Postgres com dados persistentes, acessível pelo terminal e pelo DBeaver.</p>
+  <p>Suba um banco Postgres com dados persistentes, acessível pelo terminal e pelo DBeaver. Inclui importação de arquivos .sql.</p>
 </header>
 
 <!-- PASSO 1 -->
 <div class="step">
   <div class="step-number">1</div>
   <h2>Pré-requisitos</h2>
-  <p>Você precisa ter instalado:</p>
   <ul>
-    <li><strong>Docker</strong> — o motor que roda os containers</li>
-    <li><strong>Docker Compose</strong> — orquestra containers via arquivo YAML (já vem junto no Docker Desktop)</li>
+    <li><strong>Docker</strong> — motor que roda os containers</li>
+    <li><strong>Docker Compose</strong> — orquestra containers via YAML (já vem no Docker Desktop)</li>
   </ul>
-  <p>Verifique se está tudo certo:</p>
   <div class="code-block">
     <div class="code-header">terminal <button onclick="copyCode(this)">copiar</button></div>
 <pre><span class="cmd">docker</span> <span class="flag">--version</span>
@@ -266,11 +125,9 @@
 <div class="step">
   <div class="step-number">2</div>
   <h2>Criar a pasta do projeto</h2>
-  <p>Crie uma pasta onde ficará o arquivo de configuração:</p>
   <div class="code-block">
     <div class="code-header">terminal <button onclick="copyCode(this)">copiar</button></div>
-<pre><span class="cm"># Cria a pasta e entra nela</span>
-<span class="cmd">mkdir</span> meu-postgres && <span class="cmd">cd</span> meu-postgres</pre>
+<pre><span class="cmd">mkdir</span> meu-postgres && <span class="cmd">cd</span> meu-postgres</pre>
   </div>
 </div>
 
@@ -278,56 +135,43 @@
 <div class="step">
   <div class="step-number">3</div>
   <h2>Criar o docker-compose.yml</h2>
-  <p>Este é o arquivo principal. Cada linha está comentada:</p>
   <div class="code-block">
     <div class="code-header">docker-compose.yml <button onclick="copyCode(this)">copiar</button></div>
-<pre><span class="cm"># Versão da sintaxe do Compose</span>
-<span class="key">version</span>: <span class="st">"3.8"</span>
+<pre><span class="key">version</span>: <span class="st">"3.8"</span>
 
 <span class="key">services</span>:
   <span class="key">postgres</span>:
     <span class="cm"># Imagem oficial do PostgreSQL (versão 16)</span>
     <span class="key">image</span>: <span class="st">postgres:16</span>
 
-    <span class="cm"># Nome fixo do container (facilita achar)</span>
+    <span class="cm"># Nome fixo do container</span>
     <span class="key">container_name</span>: <span class="st">meu_postgres</span>
 
     <span class="cm"># Reinicia sozinho se o Docker reiniciar</span>
     <span class="key">restart</span>: <span class="st">unless-stopped</span>
 
-    <span class="cm"># Variáveis de ambiente (configuram o banco)</span>
     <span class="key">environment</span>:
       <span class="cm"># Senha do superusuário "postgres"</span>
       <span class="key">POSTGRES_PASSWORD</span>: <span class="st">minha_senha_123</span>
-
-      <span class="cm"># Cria um banco automaticamente ao iniciar</span>
+      <span class="cm"># Banco criado automaticamente ao iniciar</span>
       <span class="key">POSTGRES_DB</span>: <span class="st">meu_banco</span>
-
-      <span class="cm"># (Opcional) Criar outro usuário além do "postgres"</span>
       <span class="key">POSTGRES_USER</span>: <span class="st">postgres</span>
 
-    <span class="cm"># Mapeia a porta do container para a máquina</span>
-    <span class="cm"># formato: "porta_host:porta_container"</span>
-    <span class="cm"># 5432 é a porta padrão do PostgreSQL</span>
+    <span class="cm"># Porta: host:container (5432 = padrão Postgres)</span>
     <span class="key">ports</span>:
       - <span class="st">"5432:5432"</span>
 
-    <span class="cm"># VOLUME: onde os dados ficam salvos!</span>
-    <span class="cm"># Mapeia a pasta de dados do Postgres para</span>
-    <span class="cm"># um volume Docker que NÃO é apagado ao</span>
-    <span class="cm"># remover o container</span>
+    <span class="cm"># Volume para persistência dos dados</span>
     <span class="key">volumes</span>:
       - <span class="st">pgdata:/var/lib/postgresql/data</span>
 
-<span class="cm"># Declara o volume nomeado</span>
-<span class="cm"># É isso que garante a persistência dos dados!</span>
+<span class="cm"># Volume nomeado = dados sobrevivem ao docker compose down</span>
 <span class="key">volumes</span>:
   <span class="key">pgdata</span>:</pre>
   </div>
-
   <div class="info tip">
     <strong>Por que o volume?</strong>
-    Sem o volume, os dados ficam dentro do container. Se você fizer <code>docker compose down</code>, o container é removido e os dados vão junto. Com o volume nomeado <code>pgdata</code>, os dados ficam num local separado gerenciado pelo Docker.
+    Sem ele, os dados ficam dentro do container e morrem com <code>docker compose down</code>. O volume nomeado <code>pgdata</code> guarda tudo num local separado.
   </div>
 </div>
 
@@ -337,41 +181,35 @@
   <h2>Subir o container</h2>
   <div class="code-block">
     <div class="code-header">terminal <button onclick="copyCode(this)">copiar</button></div>
-<pre><span class="cm"># -d = roda em segundo plano (detached)</span>
+<pre><span class="cm"># -d = roda em segundo plano</span>
 <span class="cmd">docker compose</span> <span class="flag">up -d</span>
 
-<span class="cm"># Veja se está rodando</span>
+<span class="cm"># Confirma se está rodando</span>
 <span class="cmd">docker</span> ps</pre>
   </div>
-  <p>Você verá o container <code>meu_postgres</code> com status <code>Up</code>.</p>
 </div>
 
 <!-- PASSO 5 -->
 <div class="step">
   <div class="step-number">5</div>
   <h2>Acessar pelo Terminal</h2>
-  <p>Existem duas formas:</p>
   <div class="code-block">
     <div class="code-header">Opção A — entrar no container <button onclick="copyCode(this)">copiar</button></div>
-<pre><span class="cm"># Abre um terminal dentro do container</span>
-<span class="cmd">docker exec</span> <span class="flag">-it</span> meu_postgres <span class="cmd">bash</span>
+<pre><span class="cmd">docker exec</span> <span class="flag">-it</span> meu_postgres <span class="cmd">bash</span>
 
-<span class="cm"># Já dentro do container, conecta no banco</span>
+<span class="cm"># Dentro do container:</span>
 <span class="cmd">psql</span> <span class="flag">-U</span> postgres <span class="flag">-d</span> meu_banco</pre>
   </div>
   <div class="code-block">
     <div class="code-header">Opção B — direto com psql <button onclick="copyCode(this)">copiar</button></div>
-<pre><span class="cm"># Executa o psql direto sem abrir bash</span>
-<span class="cmd">docker exec</span> <span class="flag">-it</span> meu_postgres \
+<pre><span class="cmd">docker exec</span> <span class="flag">-it</span> meu_postgres \
   <span class="cmd">psql</span> <span class="flag">-U</span> postgres <span class="flag">-d</span> meu_banco</pre>
   </div>
-
-  <p>Comandos úteis dentro do <code>psql</code>:</p>
   <table>
-    <tr><th>Comando</th><th>O que faz</th></tr>
+    <tr><th>Comando psql</th><th>O que faz</th></tr>
     <tr><td><code>\l</code></td><td>Lista todos os bancos</td></tr>
     <tr><td><code>\dt</code></td><td>Lista tabelas do banco atual</td></tr>
-    <tr><td><code>\d tabela</code></td><td>Mostra estrutura de uma tabela</td></tr>
+    <tr><td><code>\d tabela</code></td><td>Estrutura de uma tabela</td></tr>
     <tr><td><code>\q</code></td><td>Sai do psql</td></tr>
   </table>
 </div>
@@ -380,7 +218,7 @@
 <div class="step">
   <div class="step-number">6</div>
   <h2>Acessar pelo DBeaver</h2>
-  <p>Abra o DBeaver e crie uma nova conexão PostgreSQL com:</p>
+  <p>Crie uma nova conexão PostgreSQL:</p>
   <table>
     <tr><th>Campo</th><th>Valor</th></tr>
     <tr><td>Host</td><td><code>localhost</code></td></tr>
@@ -389,48 +227,102 @@
     <tr><td>Usuário</td><td><code>postgres</code></td></tr>
     <tr><td>Senha</td><td><code>minha_senha_123</code></td></tr>
   </table>
-  <p>Clique em <strong>Test Connection</strong> para validar, depois <strong>Finish</strong>.</p>
-
   <div class="info warn">
     <strong>Porta ocupada?</strong>
-    Se a 5432 já estiver em uso (outro Postgres instalado), mude o mapeamento no <code>docker-compose.yml</code> para <code>"5433:5432"</code> e use a porta <code>5433</code> no DBeaver.
+    Mude no compose para <code>"5433:5432"</code> e use <code>5433</code> no DBeaver.
   </div>
 </div>
 
-<!-- PASSO 7 -->
+<!-- PASSO 7 — IMPORTAR SQL -->
 <div class="step">
   <div class="step-number">7</div>
-  <h2>Testar a persistência</h2>
-  <p>Vamos criar dados, derrubar o container e verificar que nada se perdeu:</p>
+  <h2>Importar arquivo .sql</h2>
+  <p>Para importar um arquivo <code>.sql</code> (criar tabelas, inserir dados, restaurar backup), o processo é enviar o conteúdo do arquivo para o <code>psql</code> dentro do container. O comando muda entre Windows e Linux:</p>
+
+  <div id="pg-import-tabs">
+    <div class="os-tabs">
+      <div class="os-tab active" onclick="switchTab('pg-import', 'win')">Windows (PowerShell)</div>
+      <div class="os-tab" onclick="switchTab('pg-import', 'linux')">Linux / Mac</div>
+    </div>
+
+    <div class="os-content active" data-group="pg-import" data-os="win">
+      <div class="code-block" style="border-radius: 0 8px 8px 8px;">
+        <div class="code-header">PowerShell <button onclick="copyCode(this)">copiar</button></div>
+<pre><span class="cm"># Get-Content lê o arquivo e o | (pipe) envia</span>
+<span class="cm"># o conteúdo para o psql dentro do container</span>
+<span class="cm"># -i = modo interativo (aceita entrada via pipe)</span>
+
+<span class="cmd">Get-Content</span> <span class="st">.\empresa.sql</span> | <span class="cmd">docker exec</span> <span class="flag">-i</span> meu_postgres <span class="cmd">psql</span> <span class="flag">-U</span> postgres <span class="flag">-d</span> meu_banco
+
+<span class="cm"># Verificar se as tabelas foram criadas:</span>
+<span class="cmd">docker exec</span> <span class="flag">-it</span> meu_postgres <span class="cmd">psql</span> <span class="flag">-U</span> postgres <span class="flag">-d</span> meu_banco <span class="flag">-c</span> <span class="st">"\dt"</span></pre>
+      </div>
+      <div class="info note">
+        <strong>Atenção ao encoding!</strong>
+        Se o .sql tiver caracteres especiais (acentos) e der erro, force UTF-8:<br>
+        <code>Get-Content .\empresa.sql -Encoding UTF8 | docker exec -i ...</code>
+      </div>
+    </div>
+
+    <div class="os-content" data-group="pg-import" data-os="linux">
+      <div class="code-block" style="border-radius: 0 8px 8px 8px;">
+        <div class="code-header">Linux / Mac <button onclick="copyCode(this)">copiar</button></div>
+<pre><span class="cm"># O operador < redireciona o conteúdo do arquivo</span>
+<span class="cm"># para o stdin do psql dentro do container</span>
+<span class="cm"># -i = modo interativo (aceita entrada via pipe)</span>
+
+<span class="cmd">docker exec</span> <span class="flag">-i</span> meu_postgres <span class="cmd">psql</span> <span class="flag">-U</span> postgres <span class="flag">-d</span> meu_banco <span class="st">< empresa.sql</span>
+
+<span class="cm"># Verificar se as tabelas foram criadas:</span>
+<span class="cmd">docker exec</span> <span class="flag">-it</span> meu_postgres <span class="cmd">psql</span> <span class="flag">-U</span> postgres <span class="flag">-d</span> meu_banco <span class="flag">-c</span> <span class="st">"\dt"</span></pre>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top: 0.8rem;">Método alternativo — copiar o arquivo para dentro do container primeiro:</p>
   <div class="code-block">
-    <div class="code-header">terminal <button onclick="copyCode(this)">copiar</button></div>
-<pre><span class="cm"># 1. Conecta e cria uma tabela com dados</span>
+    <div class="code-header">Funciona em qualquer SO <button onclick="copyCode(this)">copiar</button></div>
+<pre><span class="cm"># 1. Copia o .sql para dentro do container</span>
+<span class="cmd">docker cp</span> <span class="st">empresa.sql</span> meu_postgres:<span class="st">/tmp/empresa.sql</span>
+
+<span class="cm"># 2. Executa o arquivo de dentro do container</span>
 <span class="cmd">docker exec</span> <span class="flag">-it</span> meu_postgres \
-  <span class="cmd">psql</span> <span class="flag">-U</span> postgres <span class="flag">-d</span> meu_banco <span class="flag">-c</span> <span class="st">"
-    CREATE TABLE teste (id SERIAL, nome TEXT);
-    INSERT INTO teste (nome) VALUES ('Docker funciona!');
-  "</span>
-
-<span class="cm"># 2. Derruba e REMOVE o container</span>
-<span class="cmd">docker compose</span> <span class="flag">down</span>
-
-<span class="cm"># 3. Sobe novamente</span>
-<span class="cmd">docker compose</span> <span class="flag">up -d</span>
-
-<span class="cm"># 4. Verifica se os dados continuam lá</span>
-<span class="cmd">docker exec</span> <span class="flag">-it</span> meu_postgres \
-  <span class="cmd">psql</span> <span class="flag">-U</span> postgres <span class="flag">-d</span> meu_banco <span class="flag">-c</span> <span class="st">"SELECT * FROM teste;"</span>
-
-<span class="cm"># Resultado esperado:</span>
-<span class="cm">#  id |       nome</span>
-<span class="cm"># ----+------------------</span>
-<span class="cm">#   1 | Docker funciona!</span></pre>
+  <span class="cmd">psql</span> <span class="flag">-U</span> postgres <span class="flag">-d</span> meu_banco <span class="flag">-f</span> <span class="st">/tmp/empresa.sql</span></pre>
+  </div>
+  <div class="info tip">
+    <strong>docker cp funciona em qualquer sistema!</strong>
+    Se o pipe der problema no PowerShell, use <code>docker cp</code> + <code>psql -f</code>. É o método mais universal.
   </div>
 </div>
 
 <!-- PASSO 8 -->
 <div class="step">
   <div class="step-number">8</div>
+  <h2>Testar a persistência</h2>
+  <div class="code-block">
+    <div class="code-header">terminal <button onclick="copyCode(this)">copiar</button></div>
+<pre><span class="cm"># 1. Cria tabela e insere dado</span>
+<span class="cmd">docker exec</span> <span class="flag">-it</span> meu_postgres \
+  <span class="cmd">psql</span> <span class="flag">-U</span> postgres <span class="flag">-d</span> meu_banco <span class="flag">-c</span> <span class="st">"
+    CREATE TABLE teste (id SERIAL, nome TEXT);
+    INSERT INTO teste (nome) VALUES ('Docker funciona!');
+  "</span>
+
+<span class="cm"># 2. Derruba e remove o container</span>
+<span class="cmd">docker compose</span> <span class="flag">down</span>
+
+<span class="cm"># 3. Sobe novamente</span>
+<span class="cmd">docker compose</span> <span class="flag">up -d</span>
+
+<span class="cm"># 4. Dados continuam lá!</span>
+<span class="cmd">docker exec</span> <span class="flag">-it</span> meu_postgres \
+  <span class="cmd">psql</span> <span class="flag">-U</span> postgres <span class="flag">-d</span> meu_banco <span class="flag">-c</span> <span class="st">"SELECT * FROM teste;"</span></pre>
+  </div>
+</div>
+
+<!-- PASSO 9 -->
+<div class="step">
+  <div class="step-number">9</div>
   <h2>Comandos do dia a dia</h2>
   <table>
     <tr><th>Ação</th><th>Comando</th></tr>
@@ -438,25 +330,31 @@
     <tr><td>Parar (mantém container)</td><td><code>docker compose stop</code></td></tr>
     <tr><td>Parar e remover container</td><td><code>docker compose down</code></td></tr>
     <tr><td>Ver logs</td><td><code>docker compose logs -f</code></td></tr>
+    <tr><td>Exportar banco (backup)</td><td><code>docker exec meu_postgres pg_dump -U postgres meu_banco > backup.sql</code></td></tr>
     <tr><td>Remover TUDO (inclusive dados)</td><td><code>docker compose down -v</code></td></tr>
   </table>
-
   <div class="info warn">
     <strong>Cuidado com o <code>-v</code></strong>
-    O <code>docker compose down -v</code> apaga os volumes. Isso deleta todos os seus dados permanentemente!
+    O <code>docker compose down -v</code> apaga os volumes e deleta todos os seus dados permanentemente!
   </div>
 </div>
 
 <script>
 function copyCode(btn) {
   const pre = btn.closest('.code-block').querySelector('pre');
-  const text = pre.innerText;
-  navigator.clipboard.writeText(text).then(() => {
+  navigator.clipboard.writeText(pre.innerText).then(() => {
     btn.textContent = 'copiado ✓';
     setTimeout(() => btn.textContent = 'copiar', 1500);
   });
 }
+function switchTab(group, os) {
+  document.querySelectorAll(`[data-group="${group}"]`).forEach(el => el.classList.remove('active'));
+  document.querySelector(`[data-group="${group}"][data-os="${os}"]`).classList.add('active');
+  const tabs = document.querySelectorAll(`#${group}-tabs .os-tab`);
+  tabs.forEach(t => t.classList.remove('active'));
+  if (os === 'win') tabs[0].classList.add('active');
+  else tabs[1].classList.add('active');
+}
 </script>
-
 </body>
 </html>
