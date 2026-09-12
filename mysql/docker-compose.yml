@@ -1,0 +1,39 @@
+
+
+services:
+  mysql:
+    # Imagem oficial do MySQL (versão 8)
+    image: mysql:8
+
+    # Nome fixo do container
+    container_name: mysql_8v
+
+    # Reinicia sozinho se o Docker reiniciar
+    restart: unless-stopped
+
+    # Variáveis de ambiente (configuram o banco)
+    environment:
+      # Senha do usuário root (obrigatória)
+      MYSQL_ROOT_PASSWORD: root_senha_123
+
+      # Cria um banco automaticamente ao iniciar
+      MYSQL_DATABASE: mysql8v
+
+      # (Opcional) Cria um usuário além do root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: mysql2026
+
+    # Mapeia a porta do container para a máquina
+    # 3308 é a porta padrão do MySQL
+    ports:
+      - "3306:3306"
+
+    # VOLUME: onde os dados ficam salvos!
+    # /var/lib/mysql é a pasta de dados do MySQL
+    volumes:
+      - mysqldata:/var/lib/mysql
+
+# Declara o volume nomeado
+# É isso que garante a persistência dos dados!
+volumes:
+  mysqldata:

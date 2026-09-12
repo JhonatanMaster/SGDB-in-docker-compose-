@@ -1,0 +1,26 @@
+
+services:
+  postgres:
+    # imagem oficial do PostgreSQL V16
+    image: postgres:16
+    # nome do container
+    container_name: DB_postgresv16
+    # reiniciar sozinho se docker reiniciar 
+    restart: unless-stopped
+    # variaveis de ambiente
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres2026
+      POSTGRES_DB: learning
+    # Mapeamento de portas do container para a máquina host
+    ports:
+      - "5432:5432"
+      # Volume para salvar os dados do banco 
+      # Mapeia a pasta de dados do postgres para um volume docker que NÃO será apagado ao remover o conainer
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  
+  # Declarando o volume para persistência de dados do PostgreSQL
+volumes:
+  pgdata:
+    
